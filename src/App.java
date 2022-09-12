@@ -1,12 +1,12 @@
 public class App {
-    public static void main(String[] args) throws Exception {
-        // System.out.println("Hello, World!");
+  public static void main(String[] args) throws Exception {
+    // System.out.println("Hello, World!");
 
-        //independent of db type 
-        Data data = new Data(new MariaDB());
+    //independent of db type 
+    Data data = new Data(new MariaDB());
 
-        data.connect();
+    data.connect();
 
-        System.out.println("Connection established(?)");
-    }
+    System.out.println("Connection established(?)");
+  }
 }
