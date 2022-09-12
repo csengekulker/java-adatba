@@ -9,7 +9,7 @@ public class Data {
     this.db = db;
   }
 
-  public void connect() throws SQLException{
-    this.db.connect();
+  public void connect() throws SQLException {
+    this.db.connectDB();
   }
 }

@@ -2,11 +2,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class MariaDB implements Database{
+public class MariaDB implements Database {
+
   public Connection tryConnect() throws SQLException {
 
     Connection conn = null;
-    String url = "jdb:mariadb://localhost:3306/adatba";
+    String url = "jdbc:mariadb://localhost:3306/adatba";
     String usr = "adatba";
     String psw = "titok";
   
@@ -15,7 +16,7 @@ public class MariaDB implements Database{
     return conn;
   }
 
-  public Connection connect() {
+  public Connection connectDB() {
     Connection conn = null;
     try {
       conn = tryConnect();
