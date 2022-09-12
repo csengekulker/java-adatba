@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 public class MariaDB implements Database {
 
-  public Connection tryConnect() throws SQLException {
+  public Connection tryConnectDB() throws SQLException {
 
     Connection conn = null;
     String url = "jdbc:mariadb://localhost:3306/adatba";
@@ -16,10 +16,14 @@ public class MariaDB implements Database {
     return conn;
   }
 
+  public void tryCloseDB (Connection conn) throws SQLException {
+    conn.close();
+  }
+
   public Connection connectDB() {
     Connection conn = null;
     try {
-      conn = tryConnect();
+      conn = tryConnectDB();
 
     } catch (SQLException e) {
       System.err.println(e);
@@ -28,7 +32,13 @@ public class MariaDB implements Database {
     return conn;
   }
 
-  public void close(Connection conn) {
+  public void closeDB(Connection conn) {
+    
+    try {
+      tryCloseDB(conn);
+    } catch (SQLException e) {
+      System.err.println(e);
+    }
 
   }
 }
