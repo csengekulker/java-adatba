@@ -1,3 +1,5 @@
+import java.sql.SQLException;
+
 public class Data {
 
   //later: SQLite 
@@ -7,7 +9,7 @@ public class Data {
     this.db = db;
   }
 
-  public void connect() {
+  public void connect() throws SQLException{
     this.db.connect();
   }
 }

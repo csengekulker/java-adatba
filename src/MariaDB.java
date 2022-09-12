@@ -18,10 +18,10 @@ public class MariaDB implements Database{
   public Connection connect() {
     Connection conn = null;
     try {
-        conn = tryConnect();
+      conn = tryConnect();
 
     } catch (SQLException e) {
-        System.err.println(e);
+      System.err.println(e);
     }
 
     return conn;
