@@ -1,12 +1,13 @@
+import java.util.List;
+
 public class App {
   public static void main(String[] args) throws Exception {
-    // System.out.println("Hello, World!");
 
     //independent of db type 
-    Data data = new Data(new MariaDB());
+    Data data = new Data(new Sqlite());
+    List<Employee> emplist = data.getEmployees();
+    System.out.println(emplist.get(0).name);
 
-    data.connect();
-
-    System.out.println("Connection established(?)");
   }
 }
+

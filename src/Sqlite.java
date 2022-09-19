@@ -29,11 +29,10 @@ public class Sqlite implements Database{
   }
 
   @Override
-  public void closeDB(Connection conn) throws SQLException {
+  public void closeDB(Connection conn) {
     try {
       tryCloseDB(conn );
-    } catch (Exception e) {
-      // TODO: handle exception
+    } catch (SQLException e) {
       System.err.println(e);
     }
   }
